@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Publication{% endblock %}
+
+{% block body %}
+    {% block content %}
+        <h1>Ajouter une nouvelle publication </h1>
+
+        {{ include('publication/_form.html.twig', {'button_label': 'Ajouter✅'}) }}
+
+        <a href="{{ path('app_publication_index') }}">🔙Retourner à la liste🔙</a>
+    {% endblock %}
+{% endblock %}
+

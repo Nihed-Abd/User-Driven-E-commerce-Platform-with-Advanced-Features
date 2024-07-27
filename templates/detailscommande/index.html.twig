@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detailscommande index{% endblock %}
+
+{% block body %}
+    <h1>Detailscommande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumArticle</th>
+                <th>NomArticle</th>
+                <th>Quantite</th>
+                <th>PrixUnitaire</th>
+                <th>SousTotal</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for detailscommande in detailscommandes %}
+            <tr>
+                <td>{{ detailscommande.id }}</td>
+                <td>{{ detailscommande.numArticle }}</td>
+                <td>{{ detailscommande.nomArticle }}</td>
+                <td>{{ detailscommande.quantite }}</td>
+                <td>{{ detailscommande.prixUnitaire }}</td>
+                <td>{{ detailscommande.sousTotal }}</td>
+                <td>
+                    <a href="{{ path('app_detailscommande_show', {'id': detailscommande.id}) }}">show</a>
+                    <a href="{{ path('app_detailscommande_edit', {'id': detailscommande.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_detailscommande_new') }}">Create new</a>
+{% endblock %}

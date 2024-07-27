@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categoriecodepromo index{% endblock %}
+
+{% block body %}
+    <h1>Categoriecodepromo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idccp</th>
+                <th>Code</th>
+                <th>Valeur</th>
+                <th>Limite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categoriecodepromo in categoriecodepromos %}
+            <tr>
+                <td>{{ categoriecodepromo.idccp }}</td>
+                <td>{{ categoriecodepromo.code }}</td>
+                <td>{{ categoriecodepromo.valeur }}</td>
+                <td>{{ categoriecodepromo.limite }}</td>
+                <td>
+                    <a href="{{ path('app_categoriecodepromo_show', {'idccp': categoriecodepromo.idccp}) }}">show</a>
+                    <a href="{{ path('app_categoriecodepromo_edit', {'idccp': categoriecodepromo.idccp}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categoriecodepromo_new') }}">Create new</a>
+{% endblock %}

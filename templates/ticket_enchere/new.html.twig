@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TicketEnchere{% endblock %}
+
+{% block body %}
+    <h1>Create new TicketEnchere</h1>
+
+    {{ include('ticket_enchere/_form.html.twig') }}
+
+    <a href="{{ path('app_ticket_enchere_index') }}">back to list</a>
+{% endblock %}

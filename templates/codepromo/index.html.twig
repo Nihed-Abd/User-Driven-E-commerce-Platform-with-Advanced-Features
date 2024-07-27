@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Codepromo index{% endblock %}
+
+{% block body %}
+    <h1>Codepromo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idcode</th>
+                <th>Userid</th>
+                <th>Idcategoriecode</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for codepromo in codepromos %}
+            <tr>
+                <td>{{ codepromo.idcode }}</td>
+                <td>{{ codepromo.userid }}</td>
+                <td>{{ codepromo.idcategoriecode }}</td>
+                <td>
+                    <a href="{{ path('app_codepromo_show', {'idcode': codepromo.idcode}) }}">show</a>
+                    <a href="{{ path('app_codepromo_edit', {'idcode': codepromo.idcode}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_codepromo_new') }}">Create new</a>
+{% endblock %}

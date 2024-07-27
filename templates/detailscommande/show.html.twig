@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detailscommande{% endblock %}
+
+{% block body %}
+    <h1>Detailscommande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ detailscommande.id }}</td>
+            </tr>
+            <tr>
+                <th>NumArticle</th>
+                <td>{{ detailscommande.numArticle }}</td>
+            </tr>
+            <tr>
+                <th>NomArticle</th>
+                <td>{{ detailscommande.nomArticle }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ detailscommande.quantite }}</td>
+            </tr>
+            <tr>
+                <th>PrixUnitaire</th>
+                <td>{{ detailscommande.prixUnitaire }}</td>
+            </tr>
+            <tr>
+                <th>SousTotal</th>
+                <td>{{ detailscommande.sousTotal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_detailscommande_index') }}">back to list</a>
+
+    <a href="{{ path('app_detailscommande_edit', {'id': detailscommande.id}) }}">edit</a>
+
+    {{ include('detailscommande/_delete_form.html.twig') }}
+{% endblock %}

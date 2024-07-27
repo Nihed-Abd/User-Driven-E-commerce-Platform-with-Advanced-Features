@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart</title>
+  <!-- <style> -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('styles/cart.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/navbarstyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/footer.css') }}">
+
+  <!-- </style> -->
+</head>
+
+<body>
+  <!-- Nevabr start -->
+  <div id="nav-placeholder">
+    <div id="ship">
+
+  </div>
+  <div id="navbarstart">
+    <a href="{{ path('cart') }}">
+      <img src="images\logo.png" alt="logo">
+    </a>
+      
+      <div>
+          <input placeholder="Search... ">
+          <button id="navbarSearchBtn" type="submit"><i  class="fa fa-search"></i></button>
+      </div>
+      <div>
+          <svg class="iconsvg" width="52" height="22" viewBox="0 0 24 24" stroke="#2F3337"
+              fill="#2F3337">
+              <title>User</title>
+              <path d="M1 23c0-5.523 4.477-10 10-10h2c5.523 0 10 4.477 10 10M12 13a6 6 0 100-12 6 6 0 000 12z"
+                  stroke="inherit" fill="none" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+          </svg>
+          <br><a href="{{ path('login') }}">Account</a>
+        </div>
+        <div>
+            <svg class="iconsvg" width="22" height="22" viewBox="0 0 24 24" stroke="#2F3337"
+                fill="#2F3337">
+                <title>Heart</title>
+                <path d="M21.241 3.757A6 6 0 0012 4.684a6 6 0 10-9.242 7.558l9.241 9.243 9.243-9.243a6 6 0 000-8.485z"
+                    fill="none" stroke="inherit" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          <br>
+            <a href="{{ path('home') }}">List</a>
+        </div>
+        <div>
+          <div id="cartCount"></div>
+            <svg  class="iconsvg" width="30" height="21" viewBox="0 0 24 24" stroke="#2F3337"
+                fill="#2F3337">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.174 14.4L5.208.833C5.14.356 4.697 0 4.174 0h-3.13C.466 0 0 .43 0 .96s.467.96 1.043.96H3.26l1.966 13.567c.07.477.512.833 1.035.833h14.608c.498 0 .926-.323 1.024-.772l2.087-9.6c.113-.52-.254-1.025-.819-1.13-.565-.103-1.115.234-1.228.754L20.014 14.4H7.174zm.13 9.6a2.087 2.087 0 100-4.174 2.087 2.087 0 000 4.174zm14.61-2.087a2.087 2.087 0 11-4.175 0 2.087 2.087 0 014.174 0z"
+                    stroke="none" fill="inherit"></path>
+            </svg>
+            
+            <br>
+            <a href="{{ path('cart') }}"> Cart </a>
+        </div>
+    </div>
+    
+    <div id="navbaritems">
+        <ul>
+          <li><a href="{{ path('home') }}">Home</a></li>
+
+          <li>
+            <a href="{{ path('product') }}" >Category</a>
+            <ul>
+              <li><a href="">Living Room Furniture</a></li>
+              <li><a href="">Patio Furniture</a></li>
+              <li><a href=""> Bedroom Furniture</a></li>
+              <li><a href=""> Office Furniture</a></li>
+              <li><a href="">Living Room Furniture</a></li>
+                <li><a href="">Patio Furniture</a></li>
+                <li><a href=""> Bedroom Furniture</a></li>
+                <li><a href=""> Office Furniture</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="">Auction</a>
+          </li>
+           <li>
+            <a href="">More</a>
+            
+          </li>
+          <li >
+            <a href="" >Ideas</a>
+                      </li>
+          <li >
+            <a href="" style="color: red;">Sales & Deals</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  <h2>Shopping Cart</h2>
+
+  <!-- <div id="cart-container"></div> -->
+
+
+  <div id="containerC">
+    <div id="MainC">
+      <div id="mainC"></div>
+      <div id="main1C"></div>
+      <div id="main2C"></div>
+    </div>
+
+    <div id="mainPrice-cart">
+      <p>Total Items :<span id="total-num">0</span></p>
+      <h5>Total Price : INR <span id="total-price">0</span></h5>
+      <div>
+        <input id="inputC" placeholder="Add a Promo Code" />
+        <button id="promoC">Apply</button>
+      </div>
+      <!-- <a style="padding: 10px 0;" id="paymentC" href="address.html">Check Out</a> -->
+      <button id="paymentC"><i class="fa-solid fa-lock"></i> Check Out</button>
+    </div>
+  </div>
+
+  <!-- footer start -->
+  <div id="footer">
+    <div>
+      <p> MY ACCOUNT</p>
+      <a href="https://www.overstock.com/myaccount?myacckey=order_info">Orders & Return </a>
+      <a href="https://www.overstock.com/5522/static.html">Email Prefrences</a>
+      <a href="https://www.overstock.com/myaccount?myacckey=account_overview">Account Setting </a>
+    </div>
+    <div>
+      <p> LETS US HELP</p>
+      <a href="https://help.overstock.com/help/s/article/International-Customer-Care">Contact Customer Care</a>
+      <a href="https://overstock.force.com/help/s/article/International-Order-Shipping-Information">Shipping Information
+      </a>
+      <a href="https://help.overstock.com/help/s/article/International-Returns">Return Policy</a>
+      <a href="https://help.overstock.com/help/s/article/International-Help-Home">International Help </a>
+      <a href="https://www.overstock.com/accessibility">Accessibility</a>
+    </div>
+    <div>
+      <p> COMPANY INFORMATION</p>
+      <a href="">About Overstock <span id="logofont">TM</span></a>
+      <a href="">Contact Us </a>
+      <a href="">Career</a>
+      <a href="">Investor Relations</a>
+      <a href="">Sell Your Products</a>
+      <a href="">Supply Chain Transparency</a>
+    </div>
+    <div>
+      <p> MORE WAYS TO SHOP</p>
+      <a href="">Tips & ideas</a>
+      <a href="">Deals </a>
+      <a href="">Clearance</a>
+      <a href="">New Arrivals</a>
+    </div>
+  </div>
+
+  <div id="lastDivFooter">
+    <div>
+      © Copyright 2023, Overstock.com®, Inc.<br>
+      799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446
+    </div>
+    <div>
+      <a style="color: white;" " href="">Privacy Policy</a>
+      <a  style=" color: white;" href="">Terms & Condition </a>
+      <a style="color: white;" href="">*Promotion Terms</a>
+      <a style="color: white;" href="">Ship to : <span style="color: brown;"> India</span></a>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="{{ asset('./js/cart.js') }}"> </script>
+<script src="{{ asset('./js/navbarscripting.js') }}"></script>
+<script src="{{ asset('./js/productdetailsjs.js') }}"></script>

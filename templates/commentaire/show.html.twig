@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commentaire{% endblock %}
+
+{% block body %}
+    <h1>Commentaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCom</th>
+                <td>{{ commentaire.idCom }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ commentaire.contenu }}</td>
+            </tr>
+                <tr>
+                    <th>User</th>
+                    <td>{{ commentaire.idClient.nom }} {{ commentaire.idClient.prenom }}</td>
+                </tr>
+            <tr>
+                <th>DateCom</th>
+                <td>{{ commentaire.dateCom ? commentaire.dateCom|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commentaire_edit', {'idCom': commentaire.idCom}) }}"style="color: green;">éditer🖊</a>
+
+    {{ include('commentaire/_delete_form.html.twig') }}
+    <a href="{{ path('app_commentaire_index') }}">🔙Retourner à la liste🔙</a>
+{% endblock %}

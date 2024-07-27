@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Discount{% endblock %}
+
+{% block body %}
+    <h1>Create new Discount</h1>
+
+    {{ include('discount/_form.html.twig') }}
+
+    <a href="{{ path('app_discount_index') }}">back to list</a>
+{% endblock %}

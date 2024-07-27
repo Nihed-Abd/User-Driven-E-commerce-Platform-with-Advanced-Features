@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Publication{% endblock %}
+
+{% block body %}
+    {% block content %}
+        <h1>Modifier Publication</h1>
+
+        {{ include('publication/_form.html.twig', {'button_label': 'Modifier'}) }}
+  {{ include('publication/_delete_form.html.twig') }}
+        <a href="{{ path('app_publication_index') }}">🔙Retourner à la liste🔙</a>
+    {% endblock %}
+{% endblock %}

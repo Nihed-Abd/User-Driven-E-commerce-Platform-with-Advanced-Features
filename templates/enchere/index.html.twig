@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enchere index{% endblock %}
+
+{% block body %}
+    <h1>Enchere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>EnchereId</th>
+                <th>Idclcreree</th>
+                <th>DateDebut</th>
+                <th>Heured</th>
+                <th>DateFin</th>
+                <th>Heuref</th>
+                <th>MontantInitial</th>
+                <th>NomEnchere</th>
+                <th>MontantFinal</th>
+                <th>Image</th>
+                <th>Idclenchere</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enchere in encheres %}
+            <tr>
+                <td>{{ enchere.enchereId }}</td>
+                <td>{{ enchere.idclcreree }}</td>
+                <td>{{ enchere.dateDebut }}</td>
+                <td>{{ enchere.heured }}</td>
+                <td>{{ enchere.dateFin }}</td>
+                <td>{{ enchere.heuref }}</td>
+                <td>{{ enchere.montantInitial }}</td>
+                <td>{{ enchere.nomEnchere }}</td>
+                <td>{{ enchere.montantFinal }}</td>
+                <td>{{ enchere.image }}</td>
+                <td>{{ enchere.idclenchere }}</td>
+                <td>
+                    <a href="{{ path('app_enchere_show', {'enchereId': enchere.enchereId}) }}">show</a>
+                    <a href="{{ path('app_enchere_edit', {'enchereId': enchere.enchereId}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_enchere_new') }}">Create new</a>
+{% endblock %}

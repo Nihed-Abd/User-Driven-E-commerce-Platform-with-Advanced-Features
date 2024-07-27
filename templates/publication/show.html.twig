@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publication{% endblock %}
+
+{% block body %}
+    {% block content %}
+        <h1>Publication {{ publication.idPub }}</h1>
+
+        <table class="table">
+            <tbody>
+              
+                <tr>
+                    <th>Contenu</th>
+                    <td>{{ publication.contenu }}</td>
+                </tr>
+                  <tr>
+                    <th>User</th>
+                    <td>{{ publication.idClient.nom }} {{ publication.idClient.prenom }}</td>
+                </tr>
+                <tr>
+                    <th>j'aime</th>
+                    <td>{{ publication.nbLikes }}</td>
+                </tr>
+                <tr>
+                    <th>j'aime pas </th>
+                    <td>{{ publication.nbDislike }}</td>
+                </tr>
+                <tr>
+                    <th>Date Publication</th>
+                    <td>{{ publication.datePub ? publication.datePub|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Photo</th>
+                    <td> {% if publication.photo %}
+                            <img src="{{ asset(publication.photo) }}" alt="Photo" style="width: 100px; height: 95px; height: auto; border-radius: 0;">
+                        {% else %}
+                            Aucune photo
+                        {% endif %}</td>
+                </tr>
+            </tbody>
+        </table>
+
+          <a href="{{ path('app_publication_comments', {'idPub': publication.idPub}) }}">Voir les Commentaires👁‍🗨</a>
+        <a href="{{ path('app_publication_edit', {'idPub': publication.idPub}) }}"style="color: green;">éditer🖊</a>
+       {{ include('publication/_delete_form.html.twig') }}
+  <a href="{{ path('app_publication_index') }}">🔙Retourner à la liste🔙</a>
+
+    {% endblock %}
+{% endblock %}
