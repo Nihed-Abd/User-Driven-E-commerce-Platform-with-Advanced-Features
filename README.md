@@ -43,7 +43,7 @@ Stripe API keys for payment processing
 ##### Installation
 * Clone the repository:
 
-git clone https://github.com/yourusername/ecommerce-platform.git
+git clone https://github.com/Nihed-Abd/User-Driven-E-commerce-Platform-with-Advanced-Features.git
 
 * Navigate to the project directory
 

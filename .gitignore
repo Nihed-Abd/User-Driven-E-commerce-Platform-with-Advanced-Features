@@ -18,3 +18,7 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+branch_structure.json
