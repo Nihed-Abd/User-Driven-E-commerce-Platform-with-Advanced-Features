@@ -41,6 +41,5 @@
   "name": "tinymce",
   "version": "4.6.4",
   "scripts": {
-    "preinstall": "node dist/setup.js"
   }
 }
